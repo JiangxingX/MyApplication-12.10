@@ -127,15 +127,6 @@
                             android:background="@drawable/dot_normal" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        style="@style/homepage_cursor">
-
-                        <View
-                            android:id="@+id/dot_5"
-                            android:layout_width="10dp"
-                            android:layout_height="10dp"
-                            android:background="@drawable/dot_normal" />
-                    </LinearLayout>
                 </LinearLayout>
             </FrameLayout>
 
