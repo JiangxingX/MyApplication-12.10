@@ -2,9 +2,16 @@ package com.example.myapplication;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.transition.Slide;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -18,25 +25,41 @@ import java.util.LinkedList;
 
 public class FoodListActivity extends Activity {
     private ListView foodlist;
-    private LinkedList<Food> mData;  //Food对象列表
+    private LinkedList<Shop> mData;  //Food对象列表
     private myAdapter mAdapter;  //ListView适配器
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //设置页面切换效果
+        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+//        Transition slide=bulid();
+        Transition explode=TransitionInflater.from(this).inflateTransition(R.transition.explode);
+        getWindow().setExitTransition(explode);
+        getWindow().setEnterTransition(explode);
+
         setContentView(R.layout.activity_foodlist);
-        foodlist=(ListView)findViewById(R.id.ll_main_fg_present_recommend);  //关联控件
+        foodlist=(ListView)findViewById(R.id.FoodList);  //关联控件
         init();
         mAdapter=new myAdapter();
         foodlist.setAdapter(mAdapter);  //为ListView绑定适配器
     }
 
+    //创建一个Activity转场过度动画
+    private Transition bulid(){
+        Slide slide=new Slide();
+        slide.setDuration(200);
+        slide.setInterpolator(new LinearInterpolator());
+        slide.setSlideEdge(Gravity.RIGHT);
+        return slide;
+    }
+
     //初始化设置
     protected void init(){
         //初始化推荐美食数据
-        mData=new LinkedList<Food>();
-        mData.add(new Food("重庆火锅",80.0,96.0,R.mipmap.ic_launcher));
-        mData.add(new Food("酸菜鱼",70.0,94.0,R.mipmap.ic_launcher));
-        mData.add(new Food("辣子鸡",80.0,90.0,R.mipmap.ic_launcher));
+        mData=new LinkedList<Shop>();
+        mData.add(new Shop("重庆火锅",80.0,96.0,R.mipmap.ic_launcher));
+        mData.add(new Shop("酸菜鱼",70.0,94.0,R.mipmap.ic_launcher));
+        mData.add(new Shop("辣子鸡",80.0,90.0,R.mipmap.ic_launcher));
     }
 
     /**
@@ -66,10 +89,10 @@ public class FoodListActivity extends Activity {
             TextView foodprice=(TextView)covertView.findViewById(R.id.foodprice);
             TextView foodgrade=(TextView)covertView.findViewById(R.id.foodgrade);
             ImageView foodimage=(ImageView)covertView.findViewById(R.id.foodimage);
-            foodname.setText(mData.get(position).getFoodname());
-            foodprice.setText("¥ "+Double.toString(mData.get(position).getFoodprice()));
-            foodgrade.setText("好评度："+Double.toString(mData.get(position).getFoodgrade()));
-            foodimage.setBackgroundResource(mData.get(position).getFoodicon());
+            foodname.setText(mData.get(position).getShopname());
+            foodprice.setText("¥ "+Double.toString(mData.get(position).getShopprice()));
+            foodgrade.setText("好评度："+Double.toString(mData.get(position).getShopgrade()));
+            foodimage.setBackgroundResource(mData.get(position).getShopicon());
             return covertView;
         }
     }

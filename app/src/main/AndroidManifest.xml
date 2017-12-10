@@ -49,11 +49,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- 注册登录界面LoginActivity -->
-        <activity android:name=".LoginActivity" />
-        <!-- 注册注册界面RegisterActivity -->
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".FoodListActivity" />
+        <activity android:name=".FoodListActivity" ></activity>
+        <activity android:name=".FoodContentActivity" ></activity>
+        <activity android:name=".LocationActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".SearchActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".Login_RegisterActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
 
         <!-- 高德地图key配置 -->
         <meta-data
@@ -62,9 +65,6 @@
         <!-- 高德地图service配置 -->
         <service android:name="com.amap.api.location.APSService" />
 
-        <activity android:name=".FoodContentActivity" />
-        <activity android:name=".LocationActivity" />
-        <activity android:name=".SearchActivity"></activity>
     </application>
 
 </manifest>

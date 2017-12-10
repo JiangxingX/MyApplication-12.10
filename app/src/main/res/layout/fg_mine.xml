@@ -4,94 +4,85 @@
     android:layout_height="match_parent"
     android:background="@color/whitesmoke">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:scrollbars="none">
 
         <LinearLayout
-            android:id="@+id/ll_mine_nickname"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="@drawable/mine_click_bg"
-            android:clickable="true"
-            android:gravity="center_vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/iv_mine_head_portrait"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:clickable="false"
-                android:src="@mipmap/ic_launcher" />
+            <LinearLayout
+                android:id="@+id/message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"></LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
 
             <TextView
-                android:id="@+id/tv_mine_nickname"
-                android:layout_width="200dp"
-                android:layout_height="40dp"
-                android:paddingLeft="4dp"
-                android:paddingTop="12dp"
-                android:text="@string/user_nickname"
-                android:textSize="16sp" />
+                android:id="@+id/textview_2"
+                style="@style/setting_textView"
+                android:drawableLeft="@mipmap/comment"
+                android:text="我的评论" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <TextView
+                android:id="@+id/textview_1"
+                style="@style/setting_textView"
+                android:drawableLeft="@mipmap/collection"
+                android:text="我的收藏" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textview_3"
+                style="@style/setting_textView"
+                android:drawableLeft="@mipmap/album"
+                android:text="美食相册" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textview_4"
+                style="@style/setting_textView"
+                android:drawableLeft="@mipmap/appointment"
+                android:text="我的团约" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <TextView
+                android:id="@+id/textview_5"
+                style="@style/setting_textView"
+                android:drawableLeft="@mipmap/trace"
+                android:text="我的足迹" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+            <Button
+                android:id="@+id/exit"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="#FF0000"
+                android:text="退出登录"
+                android:textColor="#FCFCFC"
+                android:textSize="18sp" />
         </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="40dp" />
-
-        <TextView
-            android:id="@+id/tv_mine_my_collection"
-            style="@style/style_mine_table"
-            android:drawableLeft="@mipmap/tab_better_pressed"
-            android:text="@string/mine_collection" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
-
-        <TextView
-            android:id="@+id/tv_mine_food_album"
-            style="@style/style_mine_table"
-            android:drawableLeft="@mipmap/tab_channel_pressed"
-            android:text="@string/food_album" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
-
-        <TextView
-            android:id="@+id/tv_mine_my_date"
-            style="@style/style_mine_table"
-            android:drawableLeft="@mipmap/tab_message_pressed"
-            android:text="@string/mine_date" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
-
-        <TextView
-            android:id="@+id/tv_mine_record"
-            style="@style/style_mine_table"
-            android:drawableLeft="@mipmap/tab_my_pressed"
-            android:text="@string/mine_record" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
-
-        <TextView
-            android:id="@+id/tv_mine_setting"
-            style="@style/style_mine_table"
-            android:drawableLeft="@mipmap/tab_better_pressed"
-            android:text="@string/setting" />
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/bt_mine_exit_login"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_alignParentBottom="true"
-        android:background="#FF0000"
-        android:text="@string/exit_login"
-        android:textColor="#FCFCFC"
-        android:textSize="16sp" />
+    </ScrollView>
 </RelativeLayout>

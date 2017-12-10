@@ -1,12 +1,14 @@
-package com.example.myapplication;
+package com.example.myapplication.Fragment;
 
-import android.app.Activity;
+import android.support.v4.app.*;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -14,11 +16,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.R;
+
+import static android.app.Activity.RESULT_OK;
+import static android.content.Context.MODE_PRIVATE;
+
 /**
  * Created by 蒋星 on 2017/9/14.
  */
 
-public class LoginActivity extends Activity implements View.OnClickListener{
+public class Fragment_login extends Fragment implements View.OnClickListener{
     private Button btn;
     private TextView forget;
     private EditText user,password;
@@ -27,10 +34,9 @@ public class LoginActivity extends Activity implements View.OnClickListener{
     private Boolean isAutologin=false;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        bindView();
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fg_login, container, false);
+        bindView(view);
         String str="<a href='http://www.baidu.com'>忘记密码?</a>";
         forget.setMovementMethod(LinkMovementMethod.getInstance());
         forget.setText(Html.fromHtml(str));
@@ -42,15 +48,16 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                 else isAutologin=false;
             }
         });
+        return view;
     }
 
-    protected void bindView(){
-        btn=findViewById(R.id.button_login);
-        forget=(TextView)findViewById(R.id.login_forget);
-        user=findViewById(R.id.user);
-        password=findViewById(R.id.password);
-        autologin=findViewById(R.id.autologin);
-        editor=getSharedPreferences("data",MODE_PRIVATE).edit();
+    protected void bindView(View view){
+        btn=view.findViewById(R.id.button_login);
+        forget=view.findViewById(R.id.login_forget);
+        user=view.findViewById(R.id.user);
+        password=view.findViewById(R.id.password);
+        autologin=view.findViewById(R.id.autologin);
+        editor=getActivity().getSharedPreferences("data",MODE_PRIVATE).edit();
 
     }
 
@@ -58,19 +65,19 @@ public class LoginActivity extends Activity implements View.OnClickListener{
     protected void login(String str1,String str2){         //登录功能实现代码
         if(str1.equals("jiangxing")){
             if(str2.equals("123456")){
+                editor.putString("user",str1);
                 if(isAutologin){
-                    editor.putString("user",user.getText().toString());
-                    editor.putString("password",password.getText().toString());
+                    editor.putString("password",str2);
                     editor.putBoolean("autologin",true);
-                    editor.commit();
                 }
+                editor.commit();
                 Intent intent=new Intent();
-                setResult(RESULT_OK,intent);
-                finish();
+                getActivity().setResult(RESULT_OK,intent);
+                getActivity().finish();
             }else
-                Toast.makeText(getApplicationContext(),"密码错误",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity().getApplicationContext(),"密码错误",Toast.LENGTH_SHORT).show();
         }else {
-            Toast.makeText(getApplicationContext(), "用户不存在", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity().getApplicationContext(), "用户不存在", Toast.LENGTH_SHORT).show();
             password.setText(null);
             user.requestFocus();
             user.selectAll();
@@ -82,9 +89,9 @@ public class LoginActivity extends Activity implements View.OnClickListener{
         String str1=user.getText().toString();
         String str2=password.getText().toString();
         if(str1.isEmpty()){
-            Toast.makeText(getApplicationContext(),"请输入用户名",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity().getApplicationContext(),"请输入用户名",Toast.LENGTH_SHORT).show();
         }else if(str2.isEmpty()){
-            Toast.makeText(getApplicationContext(),"请输入密码",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity().getApplicationContext(),"请输入密码",Toast.LENGTH_SHORT).show();
         }else
             login(str1,str2);
     }

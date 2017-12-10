@@ -4,23 +4,148 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFEBCD"
     android:orientation="vertical"
-    android:background="@color/gainsboro"
     tools:context="com.example.myapplication.SearchActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:background="@color/gray">
+
+        <TextView
+            android:id="@+id/search_back"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:textSize="16sp"
+            android:text="返回"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:paddingRight="30dp"
+            android:text="搜索美食"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_gravity="center_horizontal"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:transitionName="shareTextView">
+
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@mipmap/search_icon"/>
-        <EditText
+            android:src="@mipmap/search_icon" />
+
+        <com.example.myapplication.ClearEditText
             android:layout_width="200dp"
             android:layout_height="30dp"
             android:background="@null"
-            android:hint="@string/food_input_hint"
+            android:hint="输入美食名称"
+            android:textColor="@color/black"
             android:textColorHint="@color/silver"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <TextView
+        style="@style/search_textview_class"
+        android:text="历史记录" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            style="@style/search_ly">
+
+            <TextView
+                style="@style/search_textview"
+                android:text="牛排"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/search_ly">
+
+            <TextView
+                style="@style/search_textview"
+                android:text="咖啡"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/search_ly">
+
+            <TextView
+                style="@style/search_textview"
+                android:text="火锅"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/search_ly">
+
+            <TextView
+                style="@style/search_textview"
+                android:text="酸辣粉"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <TextView
+        style="@style/search_textview_class"
+        android:text="热门搜索" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/search_ly">
+
+                <TextView
+                    style="@style/search_textview"
+                    android:text="火锅"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/search_ly">
+
+                <TextView
+                    style="@style/search_textview"
+                    android:text="烧烤"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/search_ly">
+
+                <TextView
+                    style="@style/search_textview"
+                    android:text="小龙虾"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/search_ly">
+
+                <TextView
+                    style="@style/search_textview"
+                    android:text="酸辣粉"/>
+            </LinearLayout>
     </LinearLayout>
 </LinearLayout>
