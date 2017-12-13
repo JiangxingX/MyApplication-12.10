@@ -15,7 +15,7 @@
         android:background="@color/gray">
 
         <TextView
-            android:id="@+id/search_back"
+            android:id="@+id/food_search_return_tv"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:gravity="center_vertical"
@@ -62,7 +62,7 @@
         android:layout_height="50dp" />
 
     <TextView
-        style="@style/search_textview_class"
+        style="@style/food_search_content_class_tv_style"
         android:text="历史记录" />
 
     <LinearLayout
@@ -71,34 +71,34 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            style="@style/search_ly">
+            style="@style/food_search_content_ll_style">
 
             <TextView
-                style="@style/search_textview"
+                style="@style/food_search_content_tv"
                 android:text="牛排"/>
         </LinearLayout>
 
         <LinearLayout
-            style="@style/search_ly">
+            style="@style/food_search_content_ll_style">
 
             <TextView
-                style="@style/search_textview"
+                style="@style/food_search_content_tv"
                 android:text="咖啡"/>
         </LinearLayout>
 
         <LinearLayout
-            style="@style/search_ly">
+            style="@style/food_search_content_ll_style">
 
             <TextView
-                style="@style/search_textview"
+                style="@style/food_search_content_tv"
                 android:text="火锅"/>
         </LinearLayout>
 
         <LinearLayout
-            style="@style/search_ly">
+            style="@style/food_search_content_ll_style">
 
             <TextView
-                style="@style/search_textview"
+                style="@style/food_search_content_tv"
                 android:text="酸辣粉"/>
         </LinearLayout>
     </LinearLayout>
@@ -108,7 +108,7 @@
         android:layout_height="40dp" />
 
     <TextView
-        style="@style/search_textview_class"
+        style="@style/food_search_content_class_tv_style"
         android:text="热门搜索" />
 
         <LinearLayout
@@ -117,34 +117,34 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                style="@style/search_ly">
+                style="@style/food_search_content_ll_style">
 
                 <TextView
-                    style="@style/search_textview"
+                    style="@style/food_search_content_tv"
                     android:text="火锅"/>
             </LinearLayout>
 
             <LinearLayout
-                style="@style/search_ly">
+                style="@style/food_search_content_ll_style">
 
                 <TextView
-                    style="@style/search_textview"
+                    style="@style/food_search_content_tv"
                     android:text="烧烤"/>
             </LinearLayout>
 
             <LinearLayout
-                style="@style/search_ly">
+                style="@style/food_search_content_ll_style">
 
                 <TextView
-                    style="@style/search_textview"
+                    style="@style/food_search_content_tv"
                     android:text="小龙虾"/>
             </LinearLayout>
 
             <LinearLayout
-                style="@style/search_ly">
+                style="@style/food_search_content_ll_style">
 
                 <TextView
-                    style="@style/search_textview"
+                    style="@style/food_search_content_tv"
                     android:text="酸辣粉"/>
             </LinearLayout>
     </LinearLayout>

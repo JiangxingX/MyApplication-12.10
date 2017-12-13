@@ -9,7 +9,7 @@
         android:layout_height="30dp">
 
         <LinearLayout
-            android:id="@+id/location"
+            android:id="@+id/homepage_position_ll"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_alignParentLeft="true"
@@ -17,7 +17,7 @@
             android:paddingLeft="5dp">
 
             <TextView
-                android:id="@+id/Location"
+                android:id="@+id/homepage_position_tv"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
                 android:ellipsize="end"
@@ -36,7 +36,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/food_search"
+            android:id="@+id/homepage_food_search_ll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -49,7 +49,7 @@
                 android:src="@mipmap/search_icon" />
 
             <TextView
-                android:id="@+id/fg_homepage_search"
+                android:id="@+id/homepage_food_search_tv"
                 android:layout_width="120dp"
                 android:layout_height="35dp"
                 android:background="@null"
@@ -58,7 +58,7 @@
                 android:paddingBottom="5dp"
                 android:textColorHint="@color/silver"
                 android:textSize="18sp"
-                android:transitionName="shareTexView"/>
+                android:transitionName="shareTexView" />
         </LinearLayout>
     </RelativeLayout>
 
@@ -76,7 +76,7 @@
                 android:layout_height="200dp">
 
                 <android.support.v4.view.ViewPager
-                    android:id="@+id/viewpager"
+                    android:id="@+id/homepage_vp"
                     android:layout_width="match_parent"
                     android:layout_height="200dp" />
 
@@ -85,44 +85,40 @@
                     android:layout_height="20dp"
                     android:layout_gravity="center_horizontal|bottom"
                     android:layout_marginBottom="5dp"
-                    android:gravity="center"
-                    android:background="@drawable/homepage_cursor_bg">
+                    android:background="@drawable/homepage_cursor_bg"
+                    android:gravity="center">
 
-                    <LinearLayout
-                        style="@style/homepage_cursor">
+                    <LinearLayout style="@style/homepage_vp_cursor_ll">
 
                         <View
-                            android:id="@+id/dot_1"
+                            android:id="@+id/homepage_vp_dot1_v"
                             android:layout_width="10dp"
                             android:layout_height="10dp"
                             android:background="@drawable/dot_focused" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        style="@style/homepage_cursor">
+                    <LinearLayout style="@style/homepage_vp_cursor_ll">
 
                         <View
-                            android:id="@+id/dot_2"
+                            android:id="@+id/homepage_vp_dot2_v"
                             android:layout_width="10dp"
                             android:layout_height="10dp"
                             android:background="@drawable/dot_normal" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        style="@style/homepage_cursor">
+                    <LinearLayout style="@style/homepage_vp_cursor_ll">
 
                         <View
-                            android:id="@+id/dot_3"
+                            android:id="@+id/homepage_vp_dot3_v"
                             android:layout_width="10dp"
                             android:layout_height="10dp"
                             android:background="@drawable/dot_normal" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        style="@style/homepage_cursor">
+                    <LinearLayout style="@style/homepage_vp_cursor_ll">
 
                         <View
-                            android:id="@+id/dot_4"
+                            android:id="@+id/homepage_vp_dot4_v"
                             android:layout_width="10dp"
                             android:layout_height="10dp"
                             android:background="@drawable/dot_normal" />
@@ -133,125 +129,125 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="20dp"/>
+                android:layout_height="20dp" />
 
             <LinearLayout
-                android:id="@+id/homepage_ly_1"
+                android:id="@+id/homepage_menu1_ll"
                 android:layout_width="match_parent"
                 android:layout_height="70dp">
 
-                <LinearLayout style="@style/homepage_ly_1">
+                <LinearLayout style="@style/homepage_menu_ll_style">
 
                     <ImageView
-                        style="@style/homepage_category_imageview"
-                        android:src="@mipmap/china"/>
+                        style="@style/homepage_menu_iv_style"
+                        android:src="@mipmap/china" />
 
                     <TextView
-                        style="@style/homepage_category_textview"
+                        style="@style/homepage_menu_tv_style"
                         android:text="中餐" />
                 </LinearLayout>
 
-                <LinearLayout style="@style/homepage_ly_1">
+                <LinearLayout style="@style/homepage_menu_ll_style">
 
                     <ImageView
-                        style="@style/homepage_category_imageview"
-                        android:src="@mipmap/japan"/>
+                        style="@style/homepage_menu_iv_style"
+                        android:src="@mipmap/japan" />
 
                     <TextView
-                        style="@style/homepage_category_textview"
+                        style="@style/homepage_menu_tv_style"
                         android:text="日料" />
                 </LinearLayout>
 
-                <LinearLayout style="@style/homepage_ly_1">
+                <LinearLayout style="@style/homepage_menu_ll_style">
 
                     <ImageView
-                        style="@style/homepage_category_imageview"
-                        android:src="@mipmap/korea"/>
+                        style="@style/homepage_menu_iv_style"
+                        android:src="@mipmap/korea" />
 
                     <TextView
-                        style="@style/homepage_category_textview"
+                        style="@style/homepage_menu_tv_style"
                         android:text="韩式" />
                 </LinearLayout>
 
-                <LinearLayout style="@style/homepage_ly_1">
+                <LinearLayout style="@style/homepage_menu_ll_style">
 
                     <ImageView
-                        style="@style/homepage_category_imageview"
-                        android:src="@mipmap/west"/>
+                        style="@style/homepage_menu_iv_style"
+                        android:src="@mipmap/west" />
 
                     <TextView
-                        style="@style/homepage_category_textview"
+                        style="@style/homepage_menu_tv_style"
                         android:text="西餐" />
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/homepage_ly_2"
+                android:id="@+id/homepage_menu2_ll"
                 android:layout_width="match_parent"
                 android:layout_height="70dp">
 
-                <LinearLayout style="@style/homepage_ly_1">
+                <LinearLayout style="@style/homepage_menu_ll_style">
 
                     <ImageView
-                        style="@style/homepage_category_imageview"
+                        style="@style/homepage_menu_iv_style"
                         android:src="@mipmap/cookie" />
 
                     <TextView
-                        style="@style/homepage_category_textview"
+                        style="@style/homepage_menu_tv_style"
                         android:text="甜品" />
                 </LinearLayout>
 
-                <LinearLayout style="@style/homepage_ly_1">
+                <LinearLayout style="@style/homepage_menu_ll_style">
 
                     <ImageView
-                        style="@style/homepage_category_imageview"
-                        android:src="@mipmap/tea"/>
+                        style="@style/homepage_menu_iv_style"
+                        android:src="@mipmap/tea" />
 
                     <TextView
-                        style="@style/homepage_category_textview"
+                        style="@style/homepage_menu_tv_style"
                         android:text="奶茶" />
                 </LinearLayout>
 
-                <LinearLayout style="@style/homepage_ly_1">
+                <LinearLayout style="@style/homepage_menu_ll_style">
 
                     <ImageView
-                        style="@style/homepage_category_imageview"
-                        android:src="@mipmap/coffee"/>
+                        style="@style/homepage_menu_iv_style"
+                        android:src="@mipmap/coffee" />
 
                     <TextView
-                        style="@style/homepage_category_textview"
+                        style="@style/homepage_menu_tv_style"
                         android:text="咖啡" />
                 </LinearLayout>
 
-                <LinearLayout style="@style/homepage_ly_1">
+                <LinearLayout style="@style/homepage_menu_ll_style">
 
                     <ImageView
-                        style="@style/homepage_category_imageview"
-                        android:src="@mipmap/fruit"/>
+                        style="@style/homepage_menu_iv_style"
+                        android:src="@mipmap/fruit" />
 
                     <TextView
-                        style="@style/homepage_category_textview"
+                        style="@style/homepage_menu_tv_style"
                         android:text="水果" />
                 </LinearLayout>
             </LinearLayout>
 
             <View
-                android:id="@+id/div_2"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="#5293DA"/>
+                android:background="#5293DA" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:paddingTop="10dp"
                 android:gravity="center"
+                android:paddingTop="10dp"
+                android:text="每日榜单"
                 android:textColor="#943646"
-                android:textSize="16sp"
-                android:text="每日榜单"/>
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -259,8 +255,8 @@
                 android:gravity="center">
 
                 <LinearLayout
-                    android:id="@+id/foodcommend"
-                    style="@style/homepage_ly_1">
+                    android:id="@+id/homepage_ranking_list_ll"
+                    style="@style/homepage_menu_ll_style">
 
                     <ImageView
                         android:layout_width="50dp"
@@ -279,7 +275,7 @@
                     android:layout_height="50dp"
                     android:background="@color/black" />
 
-                <LinearLayout style="@style/homepage_ly_1">
+                <LinearLayout style="@style/homepage_menu_ll_style">
 
                     <ImageView
                         android:layout_width="50dp"
@@ -297,167 +293,191 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="#5293DA"/>
+                android:background="#5293DA" />
 
             <TextView
-                style="@style/homepage_recoment_title"
+                style="@style/homepage_recommend_class_tv_style"
                 android:text="美食推荐" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <LinearLayout
-                    style="@style/homepage_recomment_ly">
+
+                <LinearLayout style="@style/homepage_food_recommend_ll_style">
+
                     <ImageView
-                        style="@style/homepage_recomment_imageview"
-                        android:background="@mipmap/recomment_1"/>
+                        style="@style/homepage_food_recommend_iv_style"
+                        android:background="@mipmap/recomment_1" />
+
                     <TextView
-                        style="@style/homepage_recomment_textview"
-                        android:text="巧克力蛋糕"/>
+                        style="@style/homepage_food_recommend_tv_style"
+                        android:text="巧克力蛋糕" />
                 </LinearLayout>
-                <LinearLayout
-                    style="@style/homepage_recomment_ly">
+
+                <LinearLayout style="@style/homepage_food_recommend_ll_style">
+
                     <ImageView
-                        style="@style/homepage_recomment_imageview"
-                        android:background="@mipmap/recomment_2"/>
+                        style="@style/homepage_food_recommend_iv_style"
+                        android:background="@mipmap/recomment_2" />
+
                     <TextView
-                        style="@style/homepage_recomment_textview"
-                        android:text="韩式拌饭"/>
+                        style="@style/homepage_food_recommend_tv_style"
+                        android:text="韩式拌饭" />
                 </LinearLayout>
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="20dp"/>
+                android:layout_height="20dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <LinearLayout
-                    style="@style/homepage_recomment_ly">
+
+                <LinearLayout style="@style/homepage_food_recommend_ll_style">
+
                     <ImageView
-                        style="@style/homepage_recomment_imageview"
-                        android:background="@mipmap/recomment_3"/>
+                        style="@style/homepage_food_recommend_iv_style"
+                        android:background="@mipmap/recomment_3" />
+
                     <TextView
-                        style="@style/homepage_recomment_textview"
-                        android:text="巧克力蛋糕"/>
+                        style="@style/homepage_food_recommend_tv_style"
+                        android:text="巧克力蛋糕" />
                 </LinearLayout>
-                <LinearLayout
-                    style="@style/homepage_recomment_ly">
+
+                <LinearLayout style="@style/homepage_food_recommend_ll_style">
+
                     <ImageView
-                        style="@style/homepage_recomment_imageview"
-                        android:background="@mipmap/recomment_4"/>
+                        style="@style/homepage_food_recommend_iv_style"
+                        android:background="@mipmap/recomment_4" />
+
                     <TextView
-                        style="@style/homepage_recomment_textview"
-                        android:text="韩式拌饭"/>
+                        style="@style/homepage_food_recommend_tv_style"
+                        android:text="韩式拌饭" />
                 </LinearLayout>
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="20dp"/>
+                android:layout_height="20dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <LinearLayout
-                    style="@style/homepage_recomment_ly">
+
+                <LinearLayout style="@style/homepage_food_recommend_ll_style">
+
                     <ImageView
-                        style="@style/homepage_recomment_imageview"
-                        android:background="@mipmap/recomment_5"/>
+                        style="@style/homepage_food_recommend_iv_style"
+                        android:background="@mipmap/recomment_5" />
+
                     <TextView
-                        style="@style/homepage_recomment_textview"
-                        android:text="巧克力蛋糕"/>
+                        style="@style/homepage_food_recommend_tv_style"
+                        android:text="巧克力蛋糕" />
                 </LinearLayout>
-                <LinearLayout
-                    style="@style/homepage_recomment_ly">
+
+                <LinearLayout style="@style/homepage_food_recommend_ll_style">
+
                     <ImageView
-                        style="@style/homepage_recomment_imageview"
-                        android:background="@mipmap/recomment_6"/>
+                        style="@style/homepage_food_recommend_iv_style"
+                        android:background="@mipmap/recomment_6" />
+
                     <TextView
-                        style="@style/homepage_recomment_textview"
-                        android:text="韩式拌饭"/>
+                        style="@style/homepage_food_recommend_tv_style"
+                        android:text="韩式拌饭" />
                 </LinearLayout>
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="20dp"/>
+                android:layout_height="20dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <LinearLayout
-                    style="@style/homepage_recomment_ly">
+
+                <LinearLayout style="@style/homepage_food_recommend_ll_style">
+
                     <ImageView
-                        style="@style/homepage_recomment_imageview"
-                        android:background="@mipmap/recomment_7"/>
+                        style="@style/homepage_food_recommend_iv_style"
+                        android:background="@mipmap/recomment_7" />
+
                     <TextView
-                        style="@style/homepage_recomment_textview"
-                        android:text="巧克力蛋糕"/>
+                        style="@style/homepage_food_recommend_tv_style"
+                        android:text="巧克力蛋糕" />
                 </LinearLayout>
-                <LinearLayout
-                    style="@style/homepage_recomment_ly">
+
+                <LinearLayout style="@style/homepage_food_recommend_ll_style">
+
                     <ImageView
-                        style="@style/homepage_recomment_imageview"
-                        android:background="@mipmap/recomment_8"/>
+                        style="@style/homepage_food_recommend_iv_style"
+                        android:background="@mipmap/recomment_8" />
+
                     <TextView
-                        style="@style/homepage_recomment_textview"
-                        android:text="韩式拌饭"/>
+                        style="@style/homepage_food_recommend_tv_style"
+                        android:text="韩式拌饭" />
                 </LinearLayout>
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="20dp"/>
+                android:layout_height="20dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <LinearLayout
-                    style="@style/homepage_recomment_ly">
+
+                <LinearLayout style="@style/homepage_food_recommend_ll_style">
+
                     <ImageView
-                        style="@style/homepage_recomment_imageview"
-                        android:background="@mipmap/recomment_1"/>
+                        style="@style/homepage_food_recommend_iv_style"
+                        android:background="@mipmap/recomment_1" />
+
                     <TextView
-                        style="@style/homepage_recomment_textview"
-                        android:text="巧克力蛋糕"/>
+                        style="@style/homepage_food_recommend_tv_style"
+                        android:text="巧克力蛋糕" />
                 </LinearLayout>
-                <LinearLayout
-                    style="@style/homepage_recomment_ly">
+
+                <LinearLayout style="@style/homepage_food_recommend_ll_style">
+
                     <ImageView
-                        style="@style/homepage_recomment_imageview"
-                        android:background="@mipmap/recomment_2"/>
+                        style="@style/homepage_food_recommend_iv_style"
+                        android:background="@mipmap/recomment_2" />
+
                     <TextView
-                        style="@style/homepage_recomment_textview"
-                        android:text="韩式拌饭"/>
+                        style="@style/homepage_food_recommend_tv_style"
+                        android:text="韩式拌饭" />
                 </LinearLayout>
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="20dp"/>
+                android:layout_height="20dp" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="#5293DA"/>
+                android:background="#5293DA" />
+
             <TextView
-                style="@style/homepage_recoment_title"
+                style="@style/homepage_recommend_class_tv_style"
                 android:text="商家推荐" />
 
             <LinearLayout
-                android:id="@+id/shoplist"
+                android:id="@+id/homepage_store_recommend_ll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical">
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
@@ -38,7 +37,7 @@ public class FoodListActivity extends Activity {
         getWindow().setEnterTransition(explode);
 
         setContentView(R.layout.activity_foodlist);
-        foodlist=(ListView)findViewById(R.id.FoodList);  //关联控件
+        foodlist=(ListView)findViewById(R.id.food_ranking_list_lv);  //关联控件
         init();
         mAdapter=new myAdapter();
         foodlist.setAdapter(mAdapter);  //为ListView绑定适配器
@@ -84,11 +83,11 @@ public class FoodListActivity extends Activity {
 
         @Override
         public View getView(int position, View covertView, ViewGroup viewGroup) {
-            covertView= LayoutInflater.from(FoodListActivity.this).inflate(R.layout.item_list_food,null);
-            TextView foodname=(TextView)covertView.findViewById(R.id.foodname);
-            TextView foodprice=(TextView)covertView.findViewById(R.id.foodprice);
-            TextView foodgrade=(TextView)covertView.findViewById(R.id.foodgrade);
-            ImageView foodimage=(ImageView)covertView.findViewById(R.id.foodimage);
+            covertView= LayoutInflater.from(FoodListActivity.this).inflate(R.layout.food_list_item,null);
+            TextView foodname=(TextView)covertView.findViewById(R.id.food_list_item_foodname_tv);
+            TextView foodprice=(TextView)covertView.findViewById(R.id.food_list_item_foodprice_tv);
+            TextView foodgrade=(TextView)covertView.findViewById(R.id.food_list_item_like_percent_tv);
+            ImageView foodimage=(ImageView)covertView.findViewById(R.id.food_list_item_iv);
             foodname.setText(mData.get(position).getShopname());
             foodprice.setText("¥ "+Double.toString(mData.get(position).getShopprice()));
             foodgrade.setText("好评度："+Double.toString(mData.get(position).getShopgrade()));

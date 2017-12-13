@@ -52,11 +52,11 @@ public class Fragment_login extends Fragment implements View.OnClickListener{
     }
 
     protected void bindView(View view){
-        btn=view.findViewById(R.id.button_login);
-        forget=view.findViewById(R.id.login_forget);
-        user=view.findViewById(R.id.user);
-        password=view.findViewById(R.id.password);
-        autologin=view.findViewById(R.id.autologin);
+        btn=view.findViewById(R.id.login_login_bt);
+        forget=view.findViewById(R.id.login_forget_tv);
+        user=view.findViewById(R.id.login_username_et);
+        password=view.findViewById(R.id.login_password_et);
+        autologin=view.findViewById(R.id.login_autologin_cb);
         editor=getActivity().getSharedPreferences("data",MODE_PRIVATE).edit();
 
     }

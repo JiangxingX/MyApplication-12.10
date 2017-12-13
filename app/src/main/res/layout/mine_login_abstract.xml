@@ -13,7 +13,7 @@
         android:gravity="center">
 
         <ImageView
-            android:id="@+id/imagebtn"
+            android:id="@+id/mine_login_iv"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/photo" />
@@ -26,12 +26,12 @@
         android:layout_weight="3">
 
         <LinearLayout
-            android:id="@+id/ly"
+            android:id="@+id/mine_login_nickname_ll"
             android:layout_width="match_parent"
             android:layout_height="30dp">
 
             <TextView
-                android:id="@+id/user_name"
+                android:id="@+id/mine_login_nickname_tv"
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_weight="4"
@@ -45,11 +45,11 @@
                 android:gravity="center">
 
                 <ImageView
-                    android:id="@+id/login_setting"
+                    android:id="@+id/mine_login_setting_iv"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@id/user_name"
+                    android:layout_toRightOf="@id/mine_login_nickname_tv"
                     android:src="@mipmap/setting" />
 
             </LinearLayout>
@@ -59,7 +59,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_below="@id/ly"
+            android:layout_below="@id/mine_login_nickname_ll"
             android:text="个性签名"
             android:textColor="@color/silver" />
 

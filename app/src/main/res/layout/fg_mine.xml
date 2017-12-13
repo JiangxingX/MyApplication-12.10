@@ -15,19 +15,21 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/message"
+                android:id="@+id/mine_abstract_ll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical">
+
+            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="40dp" />
 
             <TextView
-                android:id="@+id/textview_2"
+                android:id="@+id/mine_my_comment"
                 style="@style/setting_textView"
-                android:drawableLeft="@mipmap/comment"
+                android:drawableLeft="@mipmap/mine_my_comment"
                 android:text="我的评论" />
 
             <View
@@ -35,9 +37,9 @@
                 android:layout_height="30dp" />
 
             <TextView
-                android:id="@+id/textview_1"
+                android:id="@+id/mine_my_collection_tv"
                 style="@style/setting_textView"
-                android:drawableLeft="@mipmap/collection"
+                android:drawableLeft="@mipmap/mine_my_collection"
                 android:text="我的收藏" />
 
             <View
@@ -45,9 +47,9 @@
                 android:layout_height="5dp" />
 
             <TextView
-                android:id="@+id/textview_3"
+                android:id="@+id/mine_my_food_album_tv"
                 style="@style/setting_textView"
-                android:drawableLeft="@mipmap/album"
+                android:drawableLeft="@mipmap/mine_my_album"
                 android:text="美食相册" />
 
             <View
@@ -55,9 +57,9 @@
                 android:layout_height="5dp" />
 
             <TextView
-                android:id="@+id/textview_4"
+                android:id="@+id/mine_my_date_tv"
                 style="@style/setting_textView"
-                android:drawableLeft="@mipmap/appointment"
+                android:drawableLeft="@mipmap/mine_my_date"
                 android:text="我的团约" />
 
             <View
@@ -65,18 +67,18 @@
                 android:layout_height="30dp" />
 
             <TextView
-                android:id="@+id/textview_5"
+                android:id="@+id/mine_my_record"
                 style="@style/setting_textView"
-                android:drawableLeft="@mipmap/trace"
+                android:drawableLeft="@mipmap/mine_my_record"
                 android:text="我的足迹" />
 
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="50dp" />
 
             <Button
-                android:id="@+id/exit"
+                android:id="@+id/mine_exit_login_bt"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:background="#FF0000"

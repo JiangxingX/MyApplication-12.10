@@ -29,11 +29,11 @@ public class Fragment_register extends Fragment implements View.OnClickListener{
     }
 
     private void bindViews(View view){
-        user=view.findViewById(R.id.register_user);
-        password=view.findViewById(R.id.register_password);
-        repassword=view.findViewById(R.id.register_repassword);
-        tele=view.findViewById(R.id.register_tele);
-        btn_register=view.findViewById(R.id.register_button);
+        user=view.findViewById(R.id.register_username_et);
+        password=view.findViewById(R.id.register_password_et);
+        repassword=view.findViewById(R.id.register_password_confirm_et);
+        tele=view.findViewById(R.id.register_phone_et);
+        btn_register=view.findViewById(R.id.register_register_bt);
     }
 
     @Override

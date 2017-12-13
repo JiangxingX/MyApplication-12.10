@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-import android.app.*;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.support.v4.app.Fragment;
@@ -41,11 +40,11 @@ public class Login_RegisterActivity extends AppCompatActivity implements View.On
     }
 
     private void init(){
-        viewpager=(ViewPager)findViewById(R.id.activity_login_register_viewpager);
-        login=(TextView)findViewById(R.id.login_register_login);
-        register=(TextView)findViewById(R.id.login_register_register);
-        back=(TextView)findViewById(R.id.activity_login_register_back);
-        cursor=(ImageView)findViewById(R.id.activity_login_register_cursor);
+        viewpager=(ViewPager)findViewById(R.id.login_register_content_vp);
+        login=(TextView)findViewById(R.id.login_register_login_tv);
+        register=(TextView)findViewById(R.id.login_register_register_tv);
+        back=(TextView)findViewById(R.id.login_register_top_return_tv);
+        cursor=(ImageView)findViewById(R.id.login_register_content_cursor_iv);
 
         bmpwidth= BitmapFactory.decodeResource(getResources(),R.mipmap.line_1).getWidth();
         DisplayMetrics dm=new DisplayMetrics();
@@ -75,15 +74,15 @@ public class Login_RegisterActivity extends AppCompatActivity implements View.On
     public void onClick(View view) {
         hide();
         switch (view.getId()){
-            case R.id.login_register_login:
+            case R.id.login_register_login_tv:
                 viewpager.setCurrentItem(0);
                 login.setSelected(true);
                 break;
-            case R.id.login_register_register:
+            case R.id.login_register_register_tv:
                 viewpager.setCurrentItem(1);
                 register.setSelected(true);
                 break;
-            case R.id.activity_login_register_back:
+            case R.id.login_register_top_return_tv:
                 this.finish();
                 break;
         }
