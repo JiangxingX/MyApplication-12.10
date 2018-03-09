@@ -34,7 +34,7 @@ public class Login_RegisterActivity extends AppCompatActivity implements View.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login__register);
+        setContentView(R.layout.activity_login_register);
         init();
         login.performClick();
     }

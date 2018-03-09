@@ -15,10 +15,10 @@ import android.widget.TextView;
 
 import com.example.myapplication.Shop;
 import com.example.myapplication.FoodContentActivity;
-import com.example.myapplication.FoodListActivity;
 import com.example.myapplication.LocationActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.SearchActivity;
+import com.example.myapplication.Food_ranking_listActivity;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -204,7 +204,7 @@ public class Fragment_homepage extends Fragment implements View.OnClickListener,
         Intent intent;
         switch (view.getId()) {
             case R.id.homepage_ranking_list_ll:
-                intent = new Intent(getActivity(), FoodListActivity.class);
+                intent = new Intent(getActivity(), Food_ranking_listActivity.class);
                 getActivity().startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;
             case R.id.homepage_position_ll:
