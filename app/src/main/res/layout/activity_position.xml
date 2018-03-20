@@ -11,11 +11,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:orientation="horizontal"
-        android:background="@color/gray">
+        android:background="@color/gray"
+        android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/activity_location_back"
+            android:id="@+id/position_return_tv"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:gravity="center_vertical"
@@ -34,7 +34,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/location_now"
+        android:id="@+id/position_current_tv"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:paddingTop="10dp"
@@ -48,7 +48,7 @@
         android:orientation="horizontal">
 
         <com.example.myapplication.ClearEditText
-            android:id="@+id/activity_location_locate"
+            android:id="@+id/position_location_search_cet"
             android:layout_width="200dp"
             android:layout_height="30dp"
             android:background="@null"

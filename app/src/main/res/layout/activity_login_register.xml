@@ -8,14 +8,14 @@
     tools:context="com.example.myapplication.Login_RegisterActivity">
 
     <LinearLayout
-        android:id="@+id/login_register_ly"
+        android:id="@+id/login_register_top_ll"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:orientation="horizontal"
         android:background="@color/gray">
 
         <TextView
-            android:id="@+id/activity_login_register_back"
+            android:id="@+id/login_register_top_return_tv"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:gravity="center_vertical"
@@ -34,13 +34,13 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/login_register_top"
+        android:id="@+id/login_register_menu_ll"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_below="@id/login_register_ly">
+        android:layout_below="@id/login_register_top_ll">
 
         <TextView
-            android:id="@+id/login_register_login"
+            android:id="@+id/login_register_login_tv"
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
@@ -51,7 +51,7 @@
             android:textColor="@drawable/login_register_textview_color" />
 
         <TextView
-            android:id="@+id/login_register_register"
+            android:id="@+id/login_register_register_tv"
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
@@ -63,14 +63,14 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/activity_login_register_ly_1"
+        android:id="@+id/login_register_content_ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/login_register_top"
+        android:layout_below="@id/login_register_menu_ll"
         android:background="@color/whitesmoke">
 
     <ImageView
-        android:id="@+id/activity_login_register_cursor"
+        android:id="@+id/login_register_content_cursor_iv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/transparent"
@@ -80,10 +80,10 @@
     </LinearLayout>
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/activity_login_register_viewpager"
+        android:id="@+id/login_register_content_vp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/activity_login_register_ly_1">
+        android:layout_below="@id/login_register_content_ll">
     </android.support.v4.view.ViewPager>
 
 </RelativeLayout>

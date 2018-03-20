@@ -6,7 +6,6 @@ import android.transition.Transition;
 import android.transition.TransitionInflater;
 import android.view.View;
 import android.view.Window;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class SearchActivity extends AppCompatActivity implements View.OnClickListener{
@@ -23,15 +22,15 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         getWindow().setEnterTransition(fade);
         getWindow().setReenterTransition(fade);
 
-        setContentView(R.layout.activity_search);
-        tv_back=(TextView) findViewById(R.id.search_back);
+        setContentView(R.layout.activity_food_search);
+        tv_back=(TextView) findViewById(R.id.food_search_return_tv);
         tv_back.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch ((view.getId())){
-            case R.id.search_back:
+            case R.id.food_search_return_tv:
                 this.finish();
                 break;
         }

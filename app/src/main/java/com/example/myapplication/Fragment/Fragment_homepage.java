@@ -15,10 +15,10 @@ import android.widget.TextView;
 
 import com.example.myapplication.Shop;
 import com.example.myapplication.FoodContentActivity;
-import com.example.myapplication.FoodListActivity;
 import com.example.myapplication.LocationActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.SearchActivity;
+import com.example.myapplication.Food_ranking_listActivity;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -44,7 +44,7 @@ public class Fragment_homepage extends Fragment implements View.OnClickListener,
     //设置线性布局的背景图片的资源ID数组
     private int[] imagesrc = {R.mipmap.food1, R.mipmap.food2, R.mipmap.food3, R.mipmap.food4};
     //设置指针的资源ID数组
-    private int[] dotsrc = {R.id.dot_1, R.id.dot_2, R.id.dot_3, R.id.dot_4};
+    private int[] dotsrc = {R.id.homepage_vp_dot1_v, R.id.homepage_vp_dot2_v, R.id.homepage_vp_dot3_v, R.id.homepage_vp_dot4_v};
 
     /**
      * 使用Handler机制切换图片以实现轮播效果
@@ -101,12 +101,12 @@ public class Fragment_homepage extends Fragment implements View.OnClickListener,
     }
 
     protected void initView(View view) {
-        tv_1 = (LinearLayout) view.findViewById(R.id.foodcommend);  //关联控件
-        Location = view.findViewById(R.id.Location);
-        location = (LinearLayout) view.findViewById(R.id.location);
-        food_search = (LinearLayout) view.findViewById(R.id.food_search);
-        shoplist = (LinearLayout) view.findViewById(R.id.shoplist);
-        viewpager = (ViewPager) view.findViewById(R.id.viewpager);
+        tv_1 = (LinearLayout) view.findViewById(R.id.homepage_ranking_list_ll);  //关联控件
+        Location = view.findViewById(R.id.homepage_position_tv);
+        location = (LinearLayout) view.findViewById(R.id.homepage_position_ll);
+        food_search = (LinearLayout) view.findViewById(R.id.homepage_food_search_ll);
+        shoplist = (LinearLayout) view.findViewById(R.id.homepage_store_recommend_ll);
+        viewpager = (ViewPager) view.findViewById(R.id.homepage_vp);
         viewlist = new ArrayList<View>();
         dotlist = new ArrayList<View>();
         LayoutInflater li = getActivity().getLayoutInflater();
@@ -159,13 +159,13 @@ public class Fragment_homepage extends Fragment implements View.OnClickListener,
 
         //商家推送列表实现
         for (int i = 0; i < mData.size(); i++) {
-            final View view = (LinearLayout) LayoutInflater.from(getActivity()).inflate(R.layout.item_list_food, null);
+            final View view = (LinearLayout) LayoutInflater.from(getActivity()).inflate(R.layout.food_list_item, null);
 
             //从布局文件中通过ID获取UI控件
-            TextView foodname = (TextView) view.findViewById(R.id.foodname);
-            TextView foodprice = (TextView) view.findViewById(R.id.foodprice);
-            TextView foodgrade = (TextView) view.findViewById(R.id.foodgrade);
-            ImageView foodimage = (ImageView) view.findViewById(R.id.foodimage);
+            TextView foodname = (TextView) view.findViewById(R.id.food_list_item_foodname_tv);
+            TextView foodprice = (TextView) view.findViewById(R.id.food_list_item_foodprice_tv);
+            TextView foodgrade = (TextView) view.findViewById(R.id.food_list_item_like_percent_tv);
+            ImageView foodimage = (ImageView) view.findViewById(R.id.food_list_item_iv);
             foodname.setText(mData.get(i).getShopname());
 
             //从数据源获取商家数据
@@ -203,17 +203,17 @@ public class Fragment_homepage extends Fragment implements View.OnClickListener,
     public void onClick(View view) {
         Intent intent;
         switch (view.getId()) {
-            case R.id.foodcommend:
-                intent = new Intent(getActivity(), FoodListActivity.class);
+            case R.id.homepage_ranking_list_ll:
+                intent = new Intent(getActivity(), Food_ranking_listActivity.class);
                 getActivity().startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;
-            case R.id.location:
+            case R.id.homepage_position_ll:
                 intent = new Intent(getActivity(), LocationActivity.class);
                 getActivity().startActivity(intent,ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;
-            case R.id.food_search:
+            case R.id.homepage_food_search_ll:
                 intent = new Intent(getActivity(), SearchActivity.class);
-                getActivity().startActivity(intent,ActivityOptions.makeSceneTransitionAnimation(getActivity(),getActivity().findViewById(R.id.fg_homepage_search),"shareTextView").toBundle());
+                getActivity().startActivity(intent,ActivityOptions.makeSceneTransitionAnimation(getActivity(),getActivity().findViewById(R.id.homepage_food_search_tv),"shareTextView").toBundle());
                 break;
             default:
                 break;

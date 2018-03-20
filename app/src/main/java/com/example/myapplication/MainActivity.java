@@ -71,13 +71,13 @@ public class MainActivity extends CheckPermissionsActivity implements View.OnCli
 
     //UI组件初始化与事件绑定
     private void bindViews() {
-        txt_homepage = (TextView) findViewById(R.id.txt_homepage);
-        txt_perimeter = (TextView) findViewById(R.id.txt_perimeter);
-        txt_user = (TextView) findViewById(R.id.txt_user);
+        txt_homepage = (TextView) findViewById(R.id.main_menu_tv_homepage);
+        txt_perimeter = (TextView) findViewById(R.id.main_menu_tv_perimeter);
+        txt_user = (TextView) findViewById(R.id.main_menu_tv_mine);
 
         //启动时初始化周边模
         fg2 = new Fragment_perimeter();
-        fManager.beginTransaction().add(R.id.ly_content, fg2).commit();
+        fManager.beginTransaction().add(R.id.main_content_fl, fg2).commit();
 
         //为底部控件设置监听器
         txt_homepage.setOnClickListener(this);
@@ -137,24 +137,24 @@ public class MainActivity extends CheckPermissionsActivity implements View.OnCli
         hideAllFragment(fTransaction);
         setSelected();
         switch (v.getId()) {
-            case R.id.txt_homepage:
+            case R.id.main_menu_tv_homepage:
                 txt_homepage.setSelected(true);
                 if (fg1 == null) {
                     fg1 = new Fragment_homepage();
-                    fTransaction.add(R.id.ly_content, fg1);
+                    fTransaction.add(R.id.main_content_fl, fg1);
                 } else {
                     fTransaction.show(fg1);
                 }
                 break;
-            case R.id.txt_perimeter:
+            case R.id.main_menu_tv_perimeter:
                 txt_perimeter.setSelected(true);
                 fTransaction.show(fg2);
                 break;
-            case R.id.txt_user:
+            case R.id.main_menu_tv_mine:
                 txt_user.setSelected(true);
                 if (fg3 == null) {
                     fg3 = new Fragment_mine();
-                    fTransaction.add(R.id.ly_content, fg3);
+                    fTransaction.add(R.id.main_content_fl, fg3);
                 } else
                     fTransaction.show(fg3);
                 break;

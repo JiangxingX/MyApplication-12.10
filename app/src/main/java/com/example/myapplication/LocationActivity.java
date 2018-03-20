@@ -23,10 +23,10 @@ public class LocationActivity extends AppCompatActivity implements View.OnClickL
         getWindow().setEnterTransition(fade);
         getWindow().setReenterTransition(fade);
 
-        setContentView(R.layout.activity_location);
+        setContentView(R.layout.activity_position);
         Location="后街";
-        location_now=(TextView)findViewById(R.id.location_now);
-        back=(TextView)findViewById(R.id.activity_location_back);
+        location_now=(TextView)findViewById(R.id.position_current_tv);
+        back=(TextView)findViewById(R.id.position_return_tv);
         back.setOnClickListener(this);
         location_now.setText("当前位置:"+Location);
     }
@@ -34,7 +34,7 @@ public class LocationActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.activity_location_back:
+            case R.id.position_return_tv:
                 this.finish();
                 break;
         }

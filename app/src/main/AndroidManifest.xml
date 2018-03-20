@@ -49,14 +49,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FoodListActivity" ></activity>
-        <activity android:name=".FoodContentActivity" ></activity>
-        <activity android:name=".LocationActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
-        <activity android:name=".SearchActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
-        <activity android:name=".Login_RegisterActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".Food_ranking_listActivity" />
+        <activity android:name=".FoodListActivity" />
+        <activity android:name=".FoodContentActivity" />
+        <activity
+            android:name=".LocationActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".SearchActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".Login_RegisterActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <!-- 高德地图key配置 -->
         <meta-data
@@ -65,6 +69,7 @@
         <!-- 高德地图service配置 -->
         <service android:name="com.amap.api.location.APSService" />
 
+        <activity android:name=".FooddetailsActivity"></activity>
     </application>
 
 </manifest>

@@ -42,7 +42,7 @@ public class Fragment_mine extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fg_mine, container, false);
         linkView(view); //关联UI控件
         setListener(); //为控件设置事件监听器
-        userMessage.addView(LayoutInflater.from(getActivity()).inflate(R.layout.mine_usermessage_unlogin, null));
+        userMessage.addView(LayoutInflater.from(getActivity()).inflate(R.layout.mine_unlogin_abstract, null));
         sharepf = getActivity().getSharedPreferences("data", Context.MODE_PRIVATE);
         //判断是否自动登录
         if (sharepf.getBoolean("autologin", false)) {
@@ -65,13 +65,13 @@ public class Fragment_mine extends Fragment implements View.OnClickListener {
     }
 
     protected void linkView(View view) {
-        comment = view.findViewById(R.id.textview_1);
-        tv_2 = view.findViewById(R.id.textview_2);
-        tv_3 = view.findViewById(R.id.textview_3);
-        tv_4 = view.findViewById(R.id.textview_4);
-        tv_5 = view.findViewById(R.id.textview_5);
-        userMessage = view.findViewById(R.id.message);
-        btn = view.findViewById(R.id.exit);
+        comment = view.findViewById(R.id.mine_my_collection_tv);
+        tv_2 = view.findViewById(R.id.mine_my_comment);
+        tv_3 = view.findViewById(R.id.mine_my_food_album_tv);
+        tv_4 = view.findViewById(R.id.mine_my_date_tv);
+        tv_5 = view.findViewById(R.id.mine_my_record);
+        userMessage = view.findViewById(R.id.mine_abstract_ll);
+        btn = view.findViewById(R.id.mine_exit_login_bt);
     }
 
     protected void setListener() {
@@ -88,10 +88,10 @@ public class Fragment_mine extends Fragment implements View.OnClickListener {
      */
     private void Login() {
         userMessage.removeAllViews();
-        View view = LayoutInflater.from(getActivity()).inflate(R.layout.mine_usermessage_login, null);
-        setting=view.findViewById(R.id.login_setting);
+        View view = LayoutInflater.from(getActivity()).inflate(R.layout.mine_login_abstract, null);
+        setting=view.findViewById(R.id.mine_login_setting_iv);
         setting.setOnClickListener(this);
-        user_name = view.findViewById(R.id.user_name);
+        user_name = view.findViewById(R.id.mine_login_nickname_tv);
         user_name.setText(sharepf.getString("user", "unkonwn"));
         userMessage.addView(view);
         isLogin = true;
@@ -115,22 +115,22 @@ public class Fragment_mine extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         if (isLogin) {
             switch (view.getId()) {
-                case R.id.textview_1:     //“我的收藏”功能实现
+                case R.id.mine_my_collection_tv:     //“我的收藏”功能实现
                     Toast.makeText(getActivity().getApplicationContext(), "我的收藏", Toast.LENGTH_SHORT).show();
                     break;
-                case R.id.textview_2:     //“我的评论”功能实现
+                case R.id.mine_my_comment:     //“我的评论”功能实现
                     Toast.makeText(getActivity().getApplicationContext(), "我的评论", Toast.LENGTH_SHORT).show();
                     break;
-                case R.id.textview_3:     //“美食相册”功能实现
+                case R.id.mine_my_food_album_tv:     //“美食相册”功能实现
                     Toast.makeText(getActivity().getApplicationContext(), "美食相册", Toast.LENGTH_SHORT).show();
                     break;
-                case R.id.textview_4:     //“我的团约”按钮功能实现
+                case R.id.mine_my_date_tv:     //“我的团约”按钮功能实现
                     Toast.makeText(getActivity().getApplicationContext(), "我的团约", Toast.LENGTH_SHORT).show();
                     break;
-                case R.id.textview_5:     //“我的轨迹”按钮功能实现
+                case R.id.mine_my_record:     //“我的轨迹”按钮功能实现
                     Toast.makeText(getActivity().getApplicationContext(), "我的轨迹", Toast.LENGTH_SHORT).show();
                     break;
-                case R.id.exit:           //“退出”按钮功能实现
+                case R.id.mine_exit_login_bt:           //“退出”按钮功能实现
                     new AlertDialog.Builder(getActivity()).setTitle("提示")
                             .setMessage("确认退出？")
                             //“确认退出”按钮功能实现
@@ -143,7 +143,7 @@ public class Fragment_mine extends Fragment implements View.OnClickListener {
                                     editer.putBoolean("autologin", false);
                                     editer.commit();
                                     userMessage.removeAllViews();
-                                    View view = LayoutInflater.from(getActivity()).inflate(R.layout.mine_usermessage_unlogin, null);
+                                    View view = LayoutInflater.from(getActivity()).inflate(R.layout.mine_unlogin_abstract, null);
                                     userMessage.addView(view);
                                     isLogin = false;
                                 }
@@ -155,19 +155,19 @@ public class Fragment_mine extends Fragment implements View.OnClickListener {
                                 }
                             }).show();
                     break;
-                case R.id.login_setting:
+                case R.id.mine_login_setting_iv:
                     Toast.makeText(getActivity().getApplicationContext(), "设置个人信息", Toast.LENGTH_SHORT).show();
                     break;
             }
         } else {
             Intent intent = new Intent(getActivity(), Login_RegisterActivity.class);
             switch (view.getId()) {
-                case R.id.textview_1:
-                case R.id.textview_2:
-                case R.id.textview_3:
-                case R.id.textview_4:
-                case R.id.textview_5:
-                case R.id.message:
+                case R.id.mine_my_collection_tv:
+                case R.id.mine_my_comment:
+                case R.id.mine_my_food_album_tv:
+                case R.id.mine_my_date_tv:
+                case R.id.mine_my_record:
+                case R.id.mine_abstract_ll:
                     startActivityForResult(intent, 3);
                     break;
             }
